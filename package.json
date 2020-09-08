@@ -1,0 +1,24 @@
+{
+  "name": "le-projet-todos",
+  "version": "1.0.0",
+  "description": "A vanilla JS feature packed Todo List",
+  "main": "app.js",
+  "scripts": {
+    "test": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bourgeois247/le-projet-de-faires.git"
+  },
+  "keywords": [
+    "todo",
+    "todos",
+    "vanilaJS"
+  ],
+  "author": "Kesiena.Akp <@bourgeois247>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bourgeois247/le-projet-de-faires/issues"
+  },
+  "homepage": "https://github.com/bourgeois247/le-projet-de-faires#readme"
+}
