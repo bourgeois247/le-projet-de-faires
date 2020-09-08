@@ -161,11 +161,12 @@ header {
         height: 3rem;
         margin-right: 1rem;
       }
-    }
 
-    #project-sub-title {
-      font-weight: 300;
-      color: map-get($palette, light);
+      #project-sub-title {
+        font-weight: 300;
+        color: map-get($palette, light);
+        opacity: 0.6;
+      }
     }
   }
 }
@@ -311,11 +312,28 @@ main {
         color: map-get($palette, secondary);
         opacity: 0.4;
       }
+
+      .not-fav {
+        opacity: 0;
+        transition: opacity 300ms ease-in;
+      }
+    }
+
+    &:hover {
+      .not-fav {
+        opacity: 1;
+        transition: opacity 300ms ease-in;
+      }
+
+      box-shadow: 0px 0px 8px map-get($palette, secondary);
+      transition: all 300ms ease-in;
     }
 
     &.done {
       .title {
         text-decoration: line-through;
+        opacity: 0.5;
+        transition: opacity 300ms ease-in;
       }
     }
   }
