@@ -1,0 +1,322 @@
+@import './variables.scss';
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+h1 {
+  font-size: 3.052rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+input:focus {
+  outline-color: map-get($palette, light);
+}
+
+html,
+body {
+  background-color: map-get($palette, primary);
+}
+
+header {
+  background-color: map-get($palette, dark);
+  width: 100vw;
+
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 7rem;
+    padding: 1rem 0;
+
+    #titles {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #project-title {
+      display: flex;
+      font-weight: 600;
+      color: map-get($palette, secondary);
+
+      .icon {
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1rem;
+      }
+    }
+
+    #project-sub-title {
+      font-weight: 300;
+      color: map-get($palette, light);
+    }
+  }
+}
+
+.center-content {
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+main {
+  padding: 2rem 0;
+}
+
+.data-blocks {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.data-block {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  flex: 1;
+  padding: 1rem;
+  margin-right: 1rem;
+  box-sizing: border-box;
+  background-color: map-get($palette, secondary);
+
+  .value,
+  .label {
+    color: map-get($palette, primary);
+  }
+
+  .value {
+    font-weight: 600;
+  }
+
+  .label {
+    text-transform: uppercase;
+  }
+
+  &:last-of-type {
+    margin: 0;
+  }
+}
+
+#create-task {
+  background: transparent;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid map-get($palette, secondary);
+  padding: 0.5rem 0;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: map-get($palette, secondary);
+  outline: none;
+  font-size: 1.08rem;
+
+  &:active,
+  &:focus {
+    border-bottom: 3px solid map-get($palette, secondary);
+  }
+
+  &::placeholder {
+    color: transparentize(map-get($palette, secondary), 0.5);
+  }
+}
+
+#task-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .completion {
+    display: flex;
+    align-items: center;
+    background-color: map-get($palette, dark);
+    width: inherit;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+
+    .barkeep {
+      width: inherit;
+      height: 1rem;
+      border: 1px solid map-get($palette, secondary);
+    }
+
+    .barlevel {
+      background-color: map-get($palette, secondary);
+      width: 30%;
+      height: 100%;
+    }
+  }
+
+  label {
+    background-color: map-get($palette, dark);
+    width: 100%;
+    color: map-get($palette, secondary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid map-get($palette, secondary);
+    color: map-get($palette, light);
+
+    .checkbox {
+      background-color: map-get($palette, dark);
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .title {
+      width: 75%;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        display: inline-block;
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-right: 0.5rem;
+      }
+
+      .divider {
+        display: inline-block;
+        margin: 0 0.5rem 0 0;
+        color: map-get($palette, secondary);
+        opacity: 0.4;
+      }
+    }
+
+    &.done {
+      .title {
+        text-decoration: line-through;
+      }
+    }
+  }
+}
