@@ -4,7 +4,7 @@
   "description": "A vanilla JS feature packed Todo List",
   "main": "app.js",
   "scripts": {
-    "test": "npm test",
+    "test": "jest",
     "start": "yarn parcel index.html"
   },
   "repository": {
@@ -23,9 +23,11 @@
   },
   "homepage": "https://github.com/bourgeois247/le-projet-de-faires#readme",
   "dependencies": {
+    "joi": "^17.2.1",
     "parcel": "^1.12.4"
   },
   "devDependencies": {
+    "jest": "^26.4.2",
     "sass": "^1.26.10"
   }
 }
