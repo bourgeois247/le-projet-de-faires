@@ -134,6 +134,13 @@ body {
   background-color: map-get($palette, primary);
 }
 
+/**
+ * Utilities
+ */
+.hide {
+  visibility: hidden;
+}
+
 header {
   background-color: map-get($palette, dark);
   width: 100vw;
@@ -221,7 +228,6 @@ main {
   border: 0;
   border-bottom: 1px solid map-get($palette, secondary);
   padding: 0.5rem 0;
-  margin-bottom: 2rem;
   text-align: center;
   color: map-get($palette, secondary);
   outline: none;
@@ -235,6 +241,16 @@ main {
   &::placeholder {
     color: transparentize(map-get($palette, secondary), 0.5);
   }
+}
+
+#validation-error {
+  background-color: map-get($palette, danger);
+  display: inline-block;
+  width: 100%;
+  padding: 0.15rem 1rem;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+  color: map-get($palette, light);
 }
 
 #task-list {
