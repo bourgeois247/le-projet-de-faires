@@ -19,7 +19,16 @@ class TodoModel {
   DB;
   todoSchema = Joi.object({
     title: Joi.string().required().min(3),
-    details: Joi.string()
+    details: Joi.string(),
+    isFavorite: Joi.boolean(),
+    isDone: Joi.boolean()
+  });
+
+  todoSchemaForUpdates = Joi.object({
+    title: Joi.string().min(3),
+    details: Joi.string(),
+    isFavorite: Joi.boolean(),
+    isDone: Joi.boolean()
   });
 
   constructor(config) {
@@ -111,10 +120,10 @@ class TodoModel {
       throw new Error('You cannot edit the ID of a todo item, it\'s readonly.');
     }
 
-    const validatedUpdateItem = this.todoSchema.validate(updatedItem);
+    const validatedUpdateItem = this.todoSchemaForUpdates.validate(updatedItem);
 
     if (!validatedUpdateItem || validatedUpdateItem.error) {
-      throw new Error('The title and description properties are the only properties you can update.');
+      throw new Error('The title, description, isFavorite and isDone properties are the only properties you can update.');
     }
 
     this.DB[itemId] = { ...this.DB[itemId], ...updatedItem };
@@ -135,6 +144,13 @@ class TodoModel {
     }
 
     return this.DB[itemId];
+  }
+
+  /**
+   * Get all toso items in storge
+   */
+  getAll() {
+    return Object.values(this.DB);
   }
 }
 

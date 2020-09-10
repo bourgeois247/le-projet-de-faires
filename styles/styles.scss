@@ -275,8 +275,9 @@ main {
 
     .barlevel {
       background-color: map-get($palette, secondary);
-      width: 30%;
+      width: 0%;
       height: 100%;
+      transition: width 300ms ease-in;
     }
   }
 
@@ -305,6 +306,7 @@ main {
       background-color: map-get($palette, dark);
       width: 1rem;
       height: 1rem;
+      transition: background-color 300ms ease-in;
     }
 
     .title {
@@ -342,7 +344,7 @@ main {
       }
 
       box-shadow: 0px 0px 8px map-get($palette, secondary);
-      transition: all 300ms ease-in;
+      transition: all 150ms ease-in;
     }
 
     &.done {
@@ -350,6 +352,10 @@ main {
         text-decoration: line-through;
         opacity: 0.5;
         transition: opacity 300ms ease-in;
+      }
+
+      .checkbox {
+        background-color: map-get($palette, secondary);
       }
     }
   }
