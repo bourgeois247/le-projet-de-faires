@@ -1,6 +1,5 @@
 import TodoModel from '../TodoModel';
 import { exist } from 'joi';
-// import LocalStorageMock from './local-storage.mock';
 
 /**
  * TodoModel Specs
@@ -11,15 +10,9 @@ describe('Todo Model', () => {
   const originalLocalStorage = global.localStorage;
 
   beforeAll(() => {
-    // global.localStorage = new LocalStorageMock();
-
     Todo = new TodoModel({
       DATABASE_NAME: 'Test'
     });
-  });
-
-  afterAll(() => {
-    // global.localStorage = originalLocalStorage;
   });
 
   describe('Initialization', () => {
