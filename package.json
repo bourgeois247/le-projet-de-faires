@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "jest": "^26.4.2",
+    "jsdom": "^16.4.0",
+    "jsdom-simulant": "^1.1.2",
     "sass": "^1.26.10"
   }
 }

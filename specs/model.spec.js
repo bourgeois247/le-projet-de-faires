@@ -93,7 +93,7 @@ describe('Todo Model', () => {
     });
 
     it('should throw an error if the update object contains an invalid property', () => {
-      expect(() => { Todo.update(createdTaskId, { 'cost': 3000 }); }).toThrow('The title and description properties are the only properties you can update.');
+      expect(() => { Todo.update(createdTaskId, { 'cost': 3000 }); }).toThrow('The title, description, isFavorite and isDone properties are the only properties you can update.');
     });
 
     it('should update a given todo item', () => {
